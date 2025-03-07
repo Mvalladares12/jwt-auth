@@ -11,14 +11,14 @@ import java.util.Set;
 public class CartJWTService {
 
     public String generateJWT() {
-        Set<String> groups = new HashSet<>(
+        /*Set<String> groups = new HashSet<>(
         Arrays.asList("admin", "writer")
         );
-        long duration=System.currentTimeMillis() + 3600;
+        long duration=System.currentTimeMillis() + 3600;*/
         return Jwt.issuer("cart-jwt")
                 .subject("cart-jwt")
-                .groups(groups)
-                .expiresAt(duration)
+                .groups("admin")
+                .expiresAt(System.currentTimeMillis() + 3600)
                 .sign();
     }
 }

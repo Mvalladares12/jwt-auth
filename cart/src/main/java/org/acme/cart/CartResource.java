@@ -33,7 +33,7 @@ public class CartResource {
     }
 
     @DELETE
-    @RolesAllowed("admin")
+    @RolesAllowed("writer")
     @Path("{id}")
     public Response deleteItem(@PathParam("id") Long id) {
         items.stream()
